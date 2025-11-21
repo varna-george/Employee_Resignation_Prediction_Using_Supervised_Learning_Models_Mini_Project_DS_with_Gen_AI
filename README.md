@@ -32,12 +32,19 @@ Additionally, SMOTE (Synthetic Minority Over-sampling Technique) was applied on 
 
 
 Interpretation of Results (Conclusion)
-Logistic Regression - Accuracy: 0.68205
-Decision Tree - Accuracy: 0.77345
-Random Forest - Accuracy: 0.87775
-KNN - Accuracy: 0.68525
-Gradient Boosting - Accuracy: 0.81655
-Tuned Random Forest - Accuracy: 0.8787
+
+Logistic Regression - Accuracy: 68.205%
+
+Decision Tree - Accuracy: 77.345%
+
+Random Forest - Accuracy: 87.775%
+
+KNN - Accuracy: 68.525%
+
+Gradient Boosting - Accuracy: 81.655%
+
+Tuned Random Forest - Accuracy: 87.87%
+
 Random Forest was selected as one of the main models for employee resignation prediction. After applying RandomizedSearchCV for hyperparameter tuning, the overall accuracy improved slightly from 87.78% to 87.87%. The confusion matrix shows a small reduction in false positives (from 500 to 477) and a slight improvement in the F1-score for the majority “Not Resigned” class.
 However, the performance for the minority “Resigned” class did not significantly improve. The recall for this class remained very low (around 3%), meaning the model is still unable to correctly identify most employees who actually resign. This highlights the challenge of working with an imbalanced dataset: even after tuning, the model tends to favor the majority class to maintain high overall accuracy.
 Therefore, while hyperparameter tuning marginally improved overall metrics, it did not solve the main business problem of reliably detecting employees at risk of resignation. In a real-world scenario, additional techniques (such as different resampling strategies, class weights, or alternative algorithms) would be needed to better handle the minority class.
